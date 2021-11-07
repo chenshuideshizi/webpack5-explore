@@ -58,3 +58,21 @@ https://github.com/webpack/webpack/issues/12689
 
 #### Content not from webpack is served from 
 
+
+### export 'default' (imported as 'variables') was not found in '@/styles/element-variables.scss'
+
+:export 是 css 模块语法
+
+```
+              {
+                loader: 'css-loader',
+                options: {
+                  sourceMap: false,
+                  importLoaders: 2,
+                  modules: true
+                }
+              },
+```
+
+参考：
+https://www.ruanyifeng.com/blog/2016/06/css_modules.html
