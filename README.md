@@ -25,3 +25,36 @@ webpack5 初探
 > We noticed you're using the `useBuiltIns` option without declaring a core-js version. Currently, we assume version 2.x when no version is passed. Since this default version will likely change in future versions of Babel, we recommend explicitly setting the core-js version you are using via the `corejs` option.
 
 安装 corejs 并配置版本
+
+
+### webpack
+
+> index.js:138 HtmlWebpackPlugin.evaluateCompilationResult
+
+对项目的 webpack 版本进行降级，降到 v5.22.0 以下。
+
+或 update html-webpack-plugin@4.x.x -> @5.x.x
+
+参考：
+
+https://github.com/jantimon/html-webpack-plugin/issues/1603
+
+https://github.com/webpack/webpack/issues/12689
+
+#### proxy 一直不生效
+
+解决办法：添加 secure: false
+
+```
+      proxy: {
+        '/api': {
+          target: 'http://rtspodhy.commu.gmtech.top',
+          changeOrigin: true,
+          secure: false
+        }
+      }
+```
+
+
+#### Content not from webpack is served from 
+
